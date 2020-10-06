@@ -1,0 +1,51 @@
+package com.punam.swing;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class Menu {
+	
+	JFrame f;
+	JMenuBar mb;
+	JMenu file,edit,help;
+	JMenuItem cut,copy,paste,selectAll;
+	
+	public Menu() {
+		
+		f = new JFrame();
+		
+		cut = new JMenuItem("Cut");
+		copy = new JMenuItem("Copy");
+		paste = new JMenuItem("Paste");
+		selectAll = new JMenuItem("SelectAll");
+		
+		file = new JMenu();
+		edit = new JMenu();
+		help = new JMenu();
+	
+		
+		edit.add(cut);
+		edit.add(copy);
+		edit.add(paste);
+		edit.add(selectAll);
+		
+		mb = new JMenuBar();
+		mb.add(file);
+		mb.add(edit);
+		mb.add(help);
+		
+		f.add(mb);
+		f.setJMenuBar(mb);
+		f.setLayout(null);
+		f.setSize(500,500);
+		f.setVisible(true);
+		
+	}
+	
+	public static void main(String[] args) {
+		new Menu();
+	}
+
+}

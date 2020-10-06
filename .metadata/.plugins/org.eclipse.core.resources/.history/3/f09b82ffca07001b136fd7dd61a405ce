@@ -1,0 +1,44 @@
+package com.punam.swing;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+public class Textfield {
+	
+	public static void main(String[] args) {
+		
+		JFrame f = new JFrame();
+		
+		JTextField t1,t2,t3;
+		JButton add , sub;
+		
+		t1 = new JTextField();
+		t1.setBounds(50,100, 200,30);  
+		
+		t2 = new JTextField();
+		t2.setBounds(50,150, 200,30);  
+		
+		t3 = new JTextField();
+		t3.setBounds(50,200, 200,30);  
+		
+		add = new JButton();
+		add.setBounds(50,250,50,35);
+		
+		sub = new JButton();
+		sub.setBounds(80,250,50,35);
+		
+		
+		f.add(t1);
+		f.add(t2);
+		f.add(t3);
+		f.add(add);
+		f.add(sub);
+		
+		f.setSize(500,500);
+		f.setLayout(null);
+		f.setVisible(true);
+		
+	}
+
+}

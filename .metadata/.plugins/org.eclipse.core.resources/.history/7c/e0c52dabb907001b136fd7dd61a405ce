@@ -1,0 +1,14 @@
+
+public class UsingConstructor {
+
+	public UsingConstructor() {
+		
+	
+	}
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

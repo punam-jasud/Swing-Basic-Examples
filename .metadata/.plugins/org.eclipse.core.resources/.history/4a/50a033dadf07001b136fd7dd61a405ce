@@ -1,0 +1,78 @@
+package com.punam.swing;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+public class Textfield implements ActionListener {
+	
+	JFrame f ;
+
+	JTextField t1,t2,t3;
+	JButton add , sub;
+	
+	public Textfield() {
+		
+		f = new JFrame();
+	
+		t1 = new JTextField();
+		t1.setBounds(50,100, 200,30);  
+		
+		t2 = new JTextField();
+		t2.setBounds(50,150, 200,30);  
+		
+		t3 = new JTextField();
+		t3.setBounds(50,200, 200,30);  
+		
+		add = new JButton("+");
+		add.setBounds(50,250,50,35);
+		
+		sub = new JButton("-");
+		sub.setBounds(150,250,50,35);
+		
+		
+		f.add(t1);
+		f.add(t2);
+		f.add(t3);
+		f.add(add);
+		f.add(sub);
+		
+		add.addActionListener(this);
+		sub.addActionListener(this);
+		
+		f.setSize(500,500);
+		f.setLayout(null);
+		f.setVisible(true);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		String s1 = t1.getText();
+		String s2 = t2.getText();
+		
+		int a = Integer.parseInt(s1);
+		int b = Integer.parseInt(s2);
+		
+		int c = 0;
+		
+		if(e.getSource()==add) {
+			c = a + b;
+		}else if(e.getSource()==sub) {
+			c = a - b;
+		}
+		
+		String result = String.valueOf(c);
+		t3.setText(result);
+		
+	}
+	
+	public static void main(String[] args) {
+		new Textfield();
+	}
+
+}
