@@ -1,0 +1,64 @@
+package com.punam.controls;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+
+public class RadioButton extends JFrame implements ActionListener {
+
+	JRadioButton rb1, rb2;
+	JButton btn;
+	ButtonGroup bg;
+
+	/**
+	 * 
+	 */
+	public RadioButton() {
+
+		rb1 = new JRadioButton("Male");
+		rb1.setBounds(100, 100, 100, 30);
+
+		rb2 = new JRadioButton("Female");
+		rb2.setBounds(100, 150, 100, 30);
+
+		btn = new JButton("Click Me");
+		btn.setBounds(100, 200, 100, 35);
+
+		bg = new ButtonGroup();
+		bg.add(rb1);
+		bg.add(rb2);
+
+		add(rb1);
+		add(rb2);
+		add(btn);
+
+		btn.addActionListener(this);
+
+		setSize(500, 500);
+		setLayout(null);
+		setVisible(true);
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+
+		if (rb1.isSelected()) {
+			JOptionPane.showMessageDialog(this, "You are Male");
+		}
+
+		if (rb2.isSelected()) {
+			JOptionPane.showMessageDialog(this, "You are Female");
+		}
+	}
+
+	public static void main(String[] args) {
+		new RadioButton();
+	}
+
+}
